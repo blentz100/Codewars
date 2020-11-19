@@ -16,9 +16,13 @@ tested numbers are valid, you don't need to validate them
 function parseInt(incomingString){
 	let modifiedString = incomingString.split(" ");
 	console.log(modifiedString);	
+	let answer = '';
 
 	for (x = 0; x < modifiedString.length; x++){
 		console.log(modifiedString[x]);
+		
+
+
 	}
 
 }
