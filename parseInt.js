@@ -14,72 +14,94 @@ tested numbers are valid, you don't need to validate them
 */
 
 function parseInt(incomingString){
-	let modifiedString = incomingString.split(" ");
+	//using a regex to split the incoming string on spaces or a dash
+	let modifiedString = incomingString.split(/-| /);
 	console.log(modifiedString);	
-	let answer = '';
+	let answer = 0;
 
 	for (x = 0; x < modifiedString.length; x++){
 		console.log(modifiedString[x]);
 		switch (modifiedString[x]){
 			case 'one':
-				answer += '1';
+				answer +=  1 ;
 				break;
 			case 'two':
-				answer += '2';
+				answer +=  2 ;
 				break;
 			case 'three':
-				answer += '3';
+				answer +=  3 ;
 				break;
 			case 'four':
-				answer += '4';
+				answer +=  4 ;
 				break;
 			case 'five':
-				answer += '5';
+				answer +=  5 ;
 				break;
 			case 'six':
-				answer += '6';
+				answer +=  6 ;
 				break;
 			case 'seven':
-				answer += '7';
+				answer +=  7 ;
 				break;
 			case 'eight':
-				answer += '8';
+				answer +=  8 ;
 				break;
 			case 'nine':
-				answer += '9';
+				answer +=  9 ;
 				break;
 			case 'ten':
-				answer += '10';
+				answer +=  10 ;
 				break;
 			case 'eleven':
-				answer += '11';
+				answer +=  11 ;
 				break;
 			case 'twelve':
-				answer += '12';
+				answer +=  12 ;
 				break;
 			case 'thirteen':
-				answer += '13';
+				answer +=  13 ;
 				break;
 			case 'fourteen':
-				answer += '14';
+				answer +=  14 ;
 				break;
 			case 'fifteen':
-				answer += '15';
+				answer +=  15 ;
 				break;
 			case 'sixteen':
-				answer += '16';
+				answer +=  16 ;
 				break;
 			case 'seventeen':
-				answer += '17';
+				answer +=  17 ;
 				break;
 			case 'eighteen':
-				answer += '18';
+				answer +=  18 ;
 				break;
 			case 'nineteen':
-				answer += '19';
+				answer +=  19 ;
 				break;
 			case 'twenty':
-				answer += '20';
+				answer +=  20 ;
+				break;
+			case 'thirty':
+				answer +=  30 ;
+				break;
+			case 'forty':
+				answer +=  40 ;
+				break;
+			case 'fifty':
+				answer +=  50 ;
+				break;
+			case 'sixty':
+				answer +=  60 ;
+				break;
+			case 'seventy':
+				answer +=  70;
+				break;
+			case 'eighty':
+				answer +=  80 ;
+				break;
+			case 'ninety':
+				answer +=  90 ;
 				break;
 		}
 
@@ -88,4 +110,4 @@ function parseInt(incomingString){
 	return answer;
 }
 
-console.log(parseInt('one hundred twenty'));
+console.log(parseInt('two hundred forty-six'));
