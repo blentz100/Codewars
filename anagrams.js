@@ -27,14 +27,18 @@ anagrams('laser', ['lazing', 'lazy',  'lacer']) => []
 */
 
 function anagrams (word, words){
+	console.log ("word is: " + word + "  words is: " + words);
 	console.log(" ");	
+
 	let answer = [];
 	let newWordArray = word.split("");
 	newWordArray.sort();
 	let newWord = newWordArray.join("");
 
 	for(let i=0; i<words.length; i++){
+		console.log("top of the for loop");
 		console.log(words[i]);
+
 		let newArray = words[i].split("");
 		console.log("newArray is: " + newArray);
 		newArray.sort();
@@ -42,11 +46,11 @@ function anagrams (word, words){
 		let newString = newArray.join("");
 		console.log("newString is: " + newString);
 		if (newWord == newString){
-			answer.push(newString);
+			answer.push(words[i]);
 			console.log("got inside if");
 		}
 	}
-	console.log("Solution is: ");
+	console.log("Solution is: " + answer);
 return answer;
 }
 
