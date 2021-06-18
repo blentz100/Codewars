@@ -19,7 +19,10 @@ will be [ 8, 16, 4, 14, 10 ].
 */
 
 function processArray(arr, callback){
-
+        let newArray = [];
+        for (let i = 0; i < arr.length; i++){
+                newArray.push(callback(arr[i]));
+        }
+        return newArray;
 }
-
 
