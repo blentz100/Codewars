@@ -37,9 +37,11 @@ function domainName(url){
 	}
 	
 	// If it has www, then strip that out too
-	if(url.match(/www.(.)*/)){
+	if(tempAnswer.match(/www.(.)*/)){
+		console.log("tempAnswer at the top of the if statement is: " + tempAnswer);
 		console.log("got inside the if statemenet")
 		tempAnswer = url.replace("www.", "");
+		console.log("tempAnswer at the bottom of the if statement is: " + tempAnswer);
 		}
 	let dotPosition = tempAnswer.indexOf('.');
 	console.log(dotPosition);
