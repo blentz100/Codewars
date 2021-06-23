@@ -12,8 +12,41 @@ domainName("https://www.cnet.com") == "cnet"
 
 function domainName(url){
 	console.log("got inside domainName function, and url is: " + url);
-	//console.log(url.toUpperCase());
-	return url.toUpperCase();
+	console.log("original input is: " + url );	
+	// Strip out the http part
+	let tempAnswer = "";
+
+	if(url.match(/https:\/\/www.(.)*/)){
+		tempAnswer = url.replace("https://www.", "")
+		console.log("got inside first if");
+		console.log("tempAnswer is: " + tempAnswer);
+	}
+	else if (url.match(/https:\/\/(.)*/)){
+		tempAnswer = url.replace("https://", "" );
+		console.log("got inside second if");
+		console.log("tempAnswer is: " + tempAnswer);
+	}
+	else if (url.match(/http:\/\/www.(.)*/)){
+		tempAnswer = url.replace("http://www.", "")
+		console.log("got inside third if");
+		console.log("tempAnswer is: " + tempAnswer);
+	}
+	else if (url.match(/http:\/\/(.)*/)){
+		tempAnswer = url.replace("http://", "")
+		console.log("got inside fourth if");
+		console.log("tempAnswer is: " + tempAnswer);
+	}
+	
+	// If it has www, then strip that out too
+	if(url.match(/www.(.)*/)){
+		console.log("got inside the if statemenet")
+		tempAnswer = url.replace("www.", "");
+		}
+	let dotPosition = tempAnswer.indexOf('.');
+	console.log(dotPosition);
+	return tempAnswer.slice(0,dotPosition);
+
+	
 }
 
 console.log(domainName("www.google.com"));
