@@ -11,7 +11,6 @@ domainName("https://www.cnet.com") == "cnet"
 */
 
 function domainName(url){
-	console.log("got inside domainName function, and url is: " + url);
 	console.log("original input is: " + url );	
 	// Strip out the http part
 	let tempAnswer = "";
@@ -38,10 +37,19 @@ function domainName(url){
 	}
 	
 	// If it has www, then strip that out too
-	if(url.match(/www.(.)*/)){
+	if(tempAnswer.match(/www.(.)*/)){
 		console.log("got inside the if statemenet")
 		tempAnswer = url.replace("www.", "");
 		}
+	else if (url.match(/^www.(.)*/)){
+		console.log("got inside the 2nd if statement");
+		tempAnswer = url.replace("www.", "");
+	}
+	else {
+		console.log("got inside the else");
+		//tempAnswer = url;
+	}
+
 	let dotPosition = tempAnswer.indexOf('.');
 	console.log(dotPosition);
 	return tempAnswer.slice(0,dotPosition);
@@ -49,5 +57,7 @@ function domainName(url){
 	
 }
 
-console.log(domainName("www.google.com"));
+console.log(domainName("icann.org"));
+console.log(domainName("www.xakep.ru"));
+console.log(domainName("http://www.codewars.com/kata"));
 
