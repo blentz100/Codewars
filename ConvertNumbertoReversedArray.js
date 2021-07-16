@@ -10,6 +10,10 @@ Example:
 
 
 function digitize(n) {
+  
+  //This solution almost worked but not quite, it returned 
+  //an array of strings, not an array of numbers
+  /*
   console.log("Inside digitize, n is: " + n);
   console.log("n is type: " + typeof n)
   let stringN = n.toString();
@@ -23,7 +27,15 @@ function digitize(n) {
   console.log(lindaSolution);
   
   return lindaSolution;
-  
+  */
+
+  //code here from Christina, Marc, Team, stackoverflow, etc on 7-14-21
+  //this fixed the last remaining problem from the prior solution
+  return n.toString().split('').reverse().map(Number);
 }
 
-digitize(348597);
+
+
+
+
+console.log(digitize(348597));
